@@ -1,0 +1,30 @@
+{
+      "version": "0.2.0",
+      "configurations": [
+            {
+                  "name": "Python: FastAPI",
+                  "type": "debugpy",
+                  "request": "launch",
+                  "module": "uvicorn",
+                  "args": ["app.setup:app", "--reload", "--port=8001", "--host=127.0.0.1" ],
+                  "jinja": true,
+                  "justMyCode": true
+            },
+            {
+                  "name": "Pyhon: Docker",
+                  "type": "debugpy",
+                  "request": "attach",
+                  "connect": {
+                        "host": "127.0.0.1",
+                        "port": 5678
+                  },
+                  "pathMappings": [
+                        {
+                              "localRoot": "${workspaceFolder}",
+                              "remoteRoot": "."
+                        }
+                  ],
+                  "justMyCode": true
+            }
+      ]
+}
